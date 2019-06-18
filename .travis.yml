@@ -1,9 +1,8 @@
 services:
   - docker
-before_install:
-    - docker build -t nodejs sid
-    
+
 script:
+    - docker build -t nodejs sid
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     - docker tag nodejs registry.docker.com/bowmanhan/node:sid-10
     - docker push registry.docker.com/bowmanhan/node:sid-10
