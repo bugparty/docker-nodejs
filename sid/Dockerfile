@@ -2,7 +2,7 @@ FROM debian:sid
 
 # Add global dependencies
 RUN apt-get update \
-    && apt-get install -y curl apt-transport-https ca-certificates libfontconfig
+    && apt-get install -y curl apt-transport-https ca-certificates libfontconfig apt-utils
 
 RUN apt-get update \
     && apt-get install -y openssh-client
